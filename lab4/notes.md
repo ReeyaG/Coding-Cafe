@@ -10,7 +10,23 @@ The `ls -a` command shows all the files and folders, including hidden ones that 
 
 ## Question 3
 
-When I ran `git status`, Git showed me the files and folders in my `coding-cafe` folder that were not being tracked yet. My output showed four untracked entries: `.venv/`, `Readme.md`, `week02/`, and `week04/`. The `.venv/` folder contains virtual environment files, which I do not need to commit.
+When I ran git status, Git showed me the files and folders in my coding-cafe folder that were not being tracked yet. My output showed .venv/, Readme.md, week02/, and week04/ as untracked files and folders. It also showed that I had not made any commits yet and that nothing had been added to the staging area.
+
+git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+    .venv/
+    Readme.md
+    week02/
+    week04/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
 
 ## Question 4
 
@@ -26,7 +42,15 @@ After I ran `git add README.md`, the file moved from the untracked files section
 
 ## Question 7
 
-Before making my first commit, Git showed that `Readme.md` was a new file under “Changes to be committed.” After I ran `git commit -m "Lab work so far"`, Git created my first commit with that message. The commit was identified by a unique hash, which I could see using `git log`.
+After I ran git commit -m "Lab work so far", Git saved my staged changes as a commit with the message Lab work so far. The commit hash shown in my output was fcd8529e50c9036fb985ced027b3ca8246ddab49. I could use git log to view the commit details, including the author, date, and commit message.
+
+git log --oneline
+commit fcd8529e50c9036fb985ced027b3ca8246ddab49 (HEAD -> master)
+Author: reeya Gokulgandhi <reeya.g.ug26@plaksha.edu.in>
+Date:   Mon Oct 11 15:35:02 2026 +0530
+
+    Lab work so far
+fcd9076 (HEAD -> master) Lab work so far
 
 ## Question 8
 
