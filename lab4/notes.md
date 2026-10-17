@@ -15,3 +15,8 @@ Q6. `README.md` moved from Untracked files to Changes to be committed. It was ad
 Q7. Git reported the number of files changed in the first commit. I need to record the exact count shown in my terminal.
 
 Q8. The first seven characters are an abbreviated commit hash. They identify the commit in Git's history.
+
+Q9. The four steps are edit the file, stage the changes with git add, commit the changes with git commit, and inspect the result using commands such as git status or git log.
+
+Q10. README.md is a standard file name that GitHub automatically displays on the repository's front page. It gives visitors an overview of the project without requiring them to open another file.
+
