@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Lab 4: Git & GitHub
 
 ## Question 1
@@ -79,3 +80,22 @@ No, pushing did not change my local commit history. The `git push` command uploa
 ## Question 14
 
 A private repository is stored on GitHub but can only be accessed by its owner and people who have been given permission. A repository that does not exist on GitHub has no online repository page or remote copy. Making a repository private restricts who can access it, but it does not delete the repository.
+=======
+# Lab 4 Notes
+
+Q1. `--global` means the configuration applies to all Git repositories for my user account. Without it, Git applies the setting to the current repository only, assuming I am inside one.
+
+Q2. The `ls -a` command showed the hidden `.git` directory, which stores Git's repository data and history.
+
+Q3. Git listed the project files and folders, including the README, notebook, and the `week01/` and `week02/` directories.
+
+Q4. `.DS_Store` disappeared from the untracked files after adding it to `.gitignore`.
+
+Q5. `.gitignore` should be committed because it shares the rules for excluding unnecessary files with anyone using the repository.
+
+Q6. `README.md` moved from Untracked files to Changes to be committed. It was added to Git's staging area.
+
+Q7. Git reported the number of files changed in the first commit. I need to record the exact count shown in my terminal.
+
+Q8. The first seven characters are an abbreviated commit hash. They identify the commit in Git's history.
+>>>>>>> ba1817b (Add lab 4 notes)
