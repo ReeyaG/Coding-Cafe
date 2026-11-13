@@ -1,0 +1,103 @@
+*** IN-CLASS QUICK GUIDE ***
+1. Download archive ZIP from Moodle.
+2. Unzip it directly into this 'assignment' folder (a 'data' folder will appear).
+3. Read the quiz question. Find which file you need below.
+4. Load the file in main.py: my_data = load_ytd("data/FILENAME.js")
+5. Write a for loop to count or extract the data.
+
+*** COMPREHENSIVE DATA DICTIONARY ***
+
+File 1: account.js (Account's basic information)
+- Email: account_data[0]["account"]["email"]
+- Created Via: account_data[0]["account"]["createdVia"]
+- Username: account_data[0]["account"]["username"]
+- Account ID: account_data[0]["account"]["accountId"]
+- Date Created: account_data[0]["account"]["createdAt"]
+- Display Name: account_data[0]["account"]["accountDisplayName"]
+
+File 2: tweets.js (A tweet included in the archive)
+- Tweet ID: tweets_data[0]["tweet"]["id"]
+- Tweet ID (String): tweets_data[0]["tweet"]["id_str"]
+- Date Created: tweets_data[0]["tweet"]["created_at"]
+- Full Text: tweets_data[0]["tweet"]["full_text"]
+- Language: tweets_data[0]["tweet"]["lang"]
+- Source (App used): tweets_data[0]["tweet"]["source"]
+- Likes Count: tweets_data[0]["tweet"]["favorite_count"]
+- Retweets Count: tweets_data[0]["tweet"]["retweet_count"]
+- Is Favorited: tweets_data[0]["tweet"]["favorited"]
+- Is Retweeted: tweets_data[0]["tweet"]["retweeted"]
+- Is Truncated: tweets_data[0]["tweet"]["truncated"]
+- Hashtags: tweets_data[0]["tweet"]["entities"]["hashtags"]
+- User Mentions: tweets_data[0]["tweet"]["entities"]["user_mentions"]
+- URLs: tweets_data[0]["tweet"]["entities"]["urls"]
+- Symbols/Cashtags: tweets_data[0]["tweet"]["entities"]["symbols"]
+- Display Text Range: tweets_data[0]["tweet"]["display_text_range"]
+- Initial Edit Tweet IDs: tweets_data[0]["tweet"]["edit_info"]["initial"]["editTweetIds"]
+- Edit Deadline: tweets_data[0]["tweet"]["edit_info"]["initial"]["editableUntil"]
+- Edits Remaining: tweets_data[0]["tweet"]["edit_info"]["initial"]["editsRemaining"]
+- Is Edit Eligible: tweets_data[0]["tweet"]["edit_info"]["initial"]["isEditEligible"]
+
+File 3: like.js (A tweet that the account liked)
+- Tweet ID: likes_data[0]["like"]["tweetId"]
+- URL to Tweet: likes_data[0]["like"]["expandedUrl"]
+- Full Text: likes_data[0]["like"]["fullText"]
+
+File 4: follower.js (An account that follows this user)
+- Follower Account ID: follower_data[0]["follower"]["accountId"]
+- Follower Profile Link: follower_data[0]["follower"]["userLink"]
+
+File 5: following.js (An account followed by this user)
+- Following Account ID: following_data[0]["following"]["accountId"]
+- Following Profile Link: following_data[0]["following"]["userLink"]
+
+File 6: direct-messages.js (DM conversations)
+- Conversation ID: dm_data[0]["dmConversation"]["conversationId"]
+- Recipient ID: message["recipientId"]
+- Sender ID: message["senderId"]
+- Message ID: message["id"]
+- Date & Time Sent: message["createdAt"]
+- Text: message["text"]
+- URLs: message["urls"]
+- Media URLs: message["mediaUrls"]
+- Reactions List: message["reactions"]
+- Reaction Sender ID: message["reactions"][0]["senderId"]
+- Reaction Key (Type): message["reactions"][0]["reactionKey"]
+- Reaction Event ID: message["reactions"][0]["eventId"]
+- Reaction Time: message["reactions"][0]["createdAt"]
+
+File 7: ad-engagements.js (Ad impressions and clicks)
+- Time Viewed: entry["impressionAttributes"]["impressionTime"]
+- Display Location: entry["impressionAttributes"]["displayLocation"]
+- Device OS: entry["impressionAttributes"]["deviceInfo"]["osType"]
+- Promoted Tweet ID: entry["impressionAttributes"]["promotedTweetInfo"]["tweetId"]
+- Promoted Tweet Text: entry["impressionAttributes"]["promotedTweetInfo"]["tweetText"]
+- Advertiser Name: entry["impressionAttributes"]["advertiserInfo"]["advertiserName"]
+- Advertiser Screen Name: entry["impressionAttributes"]["advertiserInfo"]["screenName"]
+- Targeting Criteria List: entry["impressionAttributes"]["matchedTargetingCriteria"]
+- Engagement Time: event["engagementTime"]
+- Engagement Type: event["engagementType"]
+
+File 8: personalization.js (Inferred demographics & interests)
+- Languages List: p13n["demographics"]["languages"]
+- Specific Language: p13n["demographics"]["languages"][0]["language"]
+- Language Disabled Status: p13n["demographics"]["languages"][0]["isDisabled"]
+- Gender: p13n["demographics"]["genderInfo"]["gender"]
+- Interests List: p13n["interests"]["interests"]
+- Interest Name: p13n["interests"]["interests"][0]["name"]
+- Interest Disabled Status: p13n["interests"]["interests"][0]["isDisabled"]
+
+File 9: ad-mobile-conversions-attributed.js (Attributed app actions)
+- Attribution Category: conversion["attributedConversionType"]
+- Mobile Platform: conversion["mobilePlatform"]
+- Event Type: conversion["conversionEvent"]
+- App Name: conversion["applicationName"]
+- Recorded Value: conversion["conversionValue"]
+- Date & Time: conversion["conversionTime"]
+
+File 10: ad-mobile-conversions-unattributed.js (Unattributed app actions)
+- Mobile Platform: conversion["mobilePlatform"]
+- Event Type: conversion["conversionEvent"]
+- App Name: conversion["applicationName"]
+- Recorded Value: conversion["conversionValue"]
+- Date & Time: conversion["conversionTime"]
+- Additional Parameters: conversion.get("additionalParameters", {})
